@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>
+		<h:outputText value="Onlineshop"></h:outputText>
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</h:head>
+
+<h:body>
+	<h:form>
+			
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputText value="Registrieren"></h:outputText>
+			</f:facet>
+			
+			<h:outputLabel value="E-Mail:" />
+			<h:inputText value="#{registerController.testEmail}">
+			</h:inputText>
+			
+			<h:outputLabel value="Passwort:" />
+			<h:inputSecret id="testPassword" 
+						   value="#{registerController.testPassword}">
+			</h:inputSecret>
+			
+			<h:commandButton immidiate="true" action="/index.xhtml" value="Abbrechen"></h:commandButton>
+			<h:commandButton action="#{registerController.persist}" value="Registrieren"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+
+</html>
