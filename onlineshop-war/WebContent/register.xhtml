@@ -14,21 +14,28 @@
 </h:head>
 
 <h:body>
-	<h:form>
+	<h:form id="registerForm"
+			prependId="false">
+			<h:message for="registerForm" />
 			
-		<h:panelGrid columns="2">
+		<h:panelGrid columns="3">
 			<f:facet name="header">
 				<h:outputText value="Registrieren"></h:outputText>
 			</f:facet>
 			
-			<h:outputLabel value="E-Mail:" />
+			<h:outputLabel id="email" 
+						   value="E-Mail:" />
 			<h:inputText value="#{registerController.testEmail}">
 			</h:inputText>
+			<h:message for="email" />
 			
-			<h:outputLabel value="Passwort:" />
+			
+			<h:outputLabel id="password" 
+						   value="Passwort:" />
 			<h:inputSecret id="testPassword" 
 						   value="#{registerController.testPassword}">
 			</h:inputSecret>
+			<h:message for="password" />
 			
 			<h:commandButton immidiate="true" action="/index.xhtml" value="Abbrechen"></h:commandButton>
 			<h:commandButton action="#{registerController.persist}" value="Registrieren"></h:commandButton>

@@ -48,14 +48,13 @@ public class RegisterController implements Serializable {
 		try{
 			//ut.begin();
 			//emf.createEntityManager().persist(customer);
-			//ut.commit();
-			//FacesMessage m = new FacesMessage("Succesfully registered!");
-			//FacesContext.getCurrentInstance().addMessage("registerForm", m);
-			return "success";
+			//ut.commit();			
+			FacesMessage m = new FacesMessage("Succesfully registration");
+			FacesContext.getCurrentInstance().addMessage("email", m);			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		return "failure";
+		return "/register.xhtml";
 	}
 
 	public String getTestEmail() {
