@@ -5,12 +5,12 @@
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:f="http://java.sun.com/jsf/core">
 
+<f:loadBundle var="msg" basename="messages"/>
 <h:head>
 	<title>
-		<h:outputText value="Onlineshop"></h:outputText>
+		<h:outputText value="#{msg.title}"></h:outputText>
 	</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 </h:head>
 
 <h:body>
