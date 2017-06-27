@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf149849041732214" configfile="/onlineshop-war/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf149849041732214" configfile="/onlineshop-war/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="122" y="370" id="pf14985690369730" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14985690369731 pf14985690369732" path="/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="confirm.xhtml" x="338" y="178" id="pf14985690369733" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14985690369731" path="confirm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reject.xhtml" x="338" y="562" id="pf14985690369734" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14985690369732" path="/reject.xhtml"/>
+  <links id="pf14985690369731" target="pf14985690369733" source="pf14985690369730" outcome="success" redirect="true" fromaction="#{registerController.persist}"/>
+  <links id="pf14985690369732" target="pf14985690369734" source="pf14985690369730" outcome="failure" redirect="true" fromaction="#{registerController.persist}"/>
+</pageflow:Pageflow>
