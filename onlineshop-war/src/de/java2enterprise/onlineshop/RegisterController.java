@@ -50,7 +50,7 @@ public class RegisterController implements Serializable {
 			//emf.createEntityManager().persist(customer);
 			//ut.commit();			
 			FacesMessage m = new FacesMessage("Succesfully registration");
-			FacesContext.getCurrentInstance().addMessage("email", m);			
+			FacesContext.getCurrentInstance().addMessage(null, m);			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
