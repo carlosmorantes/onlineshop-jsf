@@ -25,6 +25,8 @@
 			<h:outputLabel id="email" 
 						   value="#{msg.email}" />
 			<h:inputText value="#{registerController.testEmail}">
+				<f:validateRequired for="email" />	
+				<f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" for="email"/>				
 			</h:inputText>
 			
 			
@@ -32,7 +34,12 @@
 						   value="#{msg.password}" />
 			<h:inputSecret id="testPassword" 
 						   value="#{registerController.testPassword}">
+						   <f:validateRequired for="password" />
+				<f:validateLength minimum="6"
+								  maximum="40"
+								  for="password"/>
 			</h:inputSecret>
+				
 			
 			<h:commandButton immidiate="true" action="/index.xhtml" value="#{msg.cancel}"></h:commandButton>
 			<h:commandButton action="#{registerController.persist}" value="#{msg.register}"></h:commandButton>
