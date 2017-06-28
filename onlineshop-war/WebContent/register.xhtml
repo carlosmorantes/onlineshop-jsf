@@ -17,7 +17,7 @@
 	<h:messages globalOnly="true"/>
 	<h:form>
 			
-		<h:panelGrid columns="2">
+		<h:panelGrid columns="2">			
 			<f:facet name="header">
 				<h:outputText value="#{msg.register}"></h:outputText>
 			</f:facet>
@@ -34,10 +34,7 @@
 						   value="#{msg.password}" />
 			<h:inputSecret id="testPassword" 
 						   value="#{registerController.testPassword}">
-						   <f:validateRequired for="password" />
-				<f:validateLength minimum="6"
-								  maximum="40"
-								  for="password"/>
+				<h:message for="password" style="color: red" />			   			
 			</h:inputSecret>
 				
 			

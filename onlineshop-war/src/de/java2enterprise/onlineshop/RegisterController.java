@@ -12,6 +12,7 @@ import javax.inject.Named;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.transaction.UserTransaction;
+import javax.validation.constraints.Size;
 
 @RequestScoped
 @Named
@@ -27,6 +28,8 @@ public class RegisterController implements Serializable {
 	
 	
 	private String testEmail;
+	
+	@Size(min=6, max=20, message="Password must be between 6 and 20 characters!")
 	private String testPassword;
 	
 	
